@@ -483,7 +483,75 @@
     }
 
     /* Sections hors hero — alignement gauche strict, aucun héritage du hero */
-    #projets *, #skills *, #contact * { text-align: left; }
+    #about *, #projets *, #skills *, #contact * { text-align: left; }
+
+    /* =============================================
+       SECTION À PROPOS
+    ============================================= */
+    #about { padding: 80px 0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text strong { color: var(--text); font-weight: 600; }
+
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: background var(--transition);
+    }
+
+    .about-card:hover { background: var(--card-hover); }
+
+    .about-card-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .about-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .about-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
 
     /* =============================================
        SECTION PROJETS
@@ -911,6 +979,7 @@
     <a href="#hero" class="nav-logo">Adam<span>.</span></a>
 
     <ul class="nav-links" id="navLinks">
+      <li><a href="#about">À propos</a></li>
       <li><a href="#projets">Projets</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -968,6 +1037,72 @@
             </svg>
             GitHub
           </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       SECTION À PROPOS
+  =========================================== -->
+  <section id="about">
+    <div class="container">
+
+      <div class="reveal">
+        <p class="section-label">Qui suis-je</p>
+        <h2 class="section-title">À propos</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <p>
+            Je m'appelle <strong>Adam Zouaoui</strong>, étudiant en spécialisation
+            <strong>AI Engineer</strong> à Holberton School. Je construis des outils web
+            concrets, utiles et bien pensés — du front-end jusqu'au déploiement.
+          </p>
+          <p>
+            Mon approche : partir d'une idée simple, la concevoir avec soin, et l'exécuter
+            proprement. Chaque projet est une opportunité d'apprendre quelque chose de nouveau
+            et de le partager.
+          </p>
+          <p>
+            Actuellement en apprentissage du <strong>C</strong> et des fondamentaux bas niveau,
+            tout en explorant l'intégration de l'IA dans les workflows de développement.
+          </p>
+        </div>
+
+        <div class="about-cards reveal reveal-stagger">
+          <div class="about-card">
+            <div class="about-card-icon">🎓</div>
+            <div>
+              <div class="about-card-title">Formation</div>
+              <div class="about-card-desc">Holberton School — AI Engineer Augmented · 2026–2027</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">📍</div>
+            <div>
+              <div class="about-card-title">Localisation</div>
+              <div class="about-card-desc">France — disponible en remote ou sur site</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🔍</div>
+            <div>
+              <div class="about-card-title">Recherche</div>
+              <div class="about-card-desc">Alternance Décembre 2026 ou Avril 2027 · Freelance</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">⚡</div>
+            <div>
+              <div class="about-card-title">Intérêts</div>
+              <div class="about-card-desc">Automatisation, IA générative, interfaces modernes, systèmes multi-agents</div>
+            </div>
+          </div>
         </div>
 
       </div>
