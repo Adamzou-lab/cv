@@ -554,6 +554,126 @@
     }
 
     /* =============================================
+       SECTION TIMELINE
+    ============================================= */
+    #timeline { padding: 80px 0; }
+
+    .timeline-track {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 48px;
+      padding-top: 32px;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--glass-border);
+    }
+
+    .timeline-step {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--glass);
+      border: 2px solid var(--glass-border);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+
+    .timeline-step.done .timeline-dot {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(10,122,85,0.15);
+    }
+
+    .timeline-step.current .timeline-dot {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 6px rgba(10,122,85,0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(10,122,85,0.2); }
+      50%       { box-shadow: 0 0 0 8px rgba(10,122,85,0.08); }
+    }
+
+    .timeline-content { text-align: center; padding: 0 8px; }
+
+    .timeline-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-top: 6px;
+    }
+
+    .badge-done { background: rgba(10,122,85,0.12); color: var(--accent); }
+    .badge-current { background: rgba(251,191,36,0.15); color: #d97706; }
+    .badge-upcoming { background: var(--glass); color: var(--text-subtle); border: 1px solid var(--glass-border); }
+
+    @media (max-width: 768px) {
+      .timeline-track {
+        flex-direction: column;
+        padding-top: 0;
+        padding-left: 24px;
+        gap: 32px;
+      }
+      .timeline-track::before {
+        top: 0;
+        bottom: 0;
+        left: 9px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+      .timeline-step { flex-direction: row; align-items: flex-start; gap: 16px; }
+      .timeline-dot { margin-bottom: 0; flex-shrink: 0; }
+      .timeline-content { text-align: left; }
+    }
+
+    /* =============================================
        SECTION PROJETS
     ============================================= */
     #projets { padding-top: 80px; }
@@ -725,6 +845,77 @@
     }
 
     .skill-item:hover .skill-dot { opacity: 1; }
+
+    /* Onglets skills */
+    .skills-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 24px;
+    }
+
+    .skills-tab {
+      padding: 8px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .skills-tab:hover { background: var(--card-hover); color: var(--text); }
+
+    .skills-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .skills-panel { display: none; }
+    .skills-panel.active { display: grid; }
+
+    /* Sous-titres skills */
+    .skills-subtitle {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 40px 0 12px;
+    }
+
+    /* Langues */
+    .skills-languages {
+      display: flex;
+      gap: 12px;
+      margin: 0 0 24px;
+    }
+
+    .lang-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+    }
+
+    .lang-flag { font-size: 1.2rem; line-height: 1; }
+
+    .lang-name { font-weight: 600; color: var(--text); }
+
+    .lang-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(10,122,85,0.1);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
 
     /* =============================================
        SECTION CONTACT
@@ -1024,7 +1215,7 @@
 
         <!-- Boutons CTA -->
         <div class="hero-cta">
-          <a href="#" class="btn btn-primary" download>
+          <a href="cv.html" target="_blank" class="btn btn-primary">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
@@ -1239,12 +1430,45 @@
         <p class="section-desc">Les outils et technologies que j'utilise au quotidien.</p>
       </div>
 
-      <div class="skills-grid reveal reveal-stagger">
+      <p class="skills-subtitle reveal">Langues</p>
+
+      <div class="skills-languages reveal">
+        <div class="lang-card">
+          <span class="lang-flag">🇫🇷</span>
+          <span class="lang-name">Français</span>
+          <span class="lang-level">Natif</span>
+        </div>
+        <div class="lang-card">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-name">Anglais</span>
+          <span class="lang-level">B2</span>
+        </div>
+      </div>
+
+      <p class="skills-subtitle reveal">Compétences</p>
+
+      <div class="skills-tabs reveal">
+        <button class="skills-tab active" data-tab="hard">Hard Skills</button>
+        <button class="skills-tab" data-tab="soft">Soft Skills</button>
+      </div>
+
+      <div class="skills-grid skills-panel active" id="tab-hard">
         <div class="skill-item"><span class="skill-dot"></span>HTML5</div>
         <div class="skill-item"><span class="skill-dot"></span>CSS3</div>
         <div class="skill-item"><span class="skill-dot"></span>Git & GitHub</div>
         <div class="skill-item"><span class="skill-dot"></span>Linux</div>
         <div class="skill-item"><span class="skill-dot"></span>C</div>
+        <div class="skill-item"><span class="skill-dot"></span>AI-Augmented Development</div>
+        <div class="skill-item"><span class="skill-dot"></span>Agentic AI</div>
+        <div class="skill-item"><span class="skill-dot"></span>Workflow Automation</div>
+      </div>
+
+      <div class="skills-grid skills-panel" id="tab-soft">
+        <div class="skill-item"><span class="skill-dot"></span>Autonomie</div>
+        <div class="skill-item"><span class="skill-dot"></span>Adaptabilité</div>
+        <div class="skill-item"><span class="skill-dot"></span>Curiosité technique</div>
+        <div class="skill-item"><span class="skill-dot"></span>Communication</div>
+        <div class="skill-item"><span class="skill-dot"></span>Résolution de problèmes</div>
       </div>
 
     </div>
@@ -1386,6 +1610,19 @@
     }, { threshold: 0.5 });
 
     sections.forEach(s => spyObserver.observe(s));
+
+
+    // -------------------------------------------
+    // ONGLETS SKILLS
+    // -------------------------------------------
+    document.querySelectorAll('.skills-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.skills-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      });
+    });
 
 
     // -------------------------------------------

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Adam Zouaoui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 52px;
+    }
+
+    /* ---- EN-TÊTE ---- */
+    .cv-header { margin-bottom: 24px; border-bottom: 2px solid #0a7a55; padding-bottom: 16px; }
+
+    .cv-name {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .cv-title {
+      font-size: 11pt;
+      font-weight: 500;
+      color: #0a7a55;
+      margin-bottom: 10px;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 9.5pt;
+      color: #444;
+    }
+
+    .cv-contact a { color: #0a7a55; text-decoration: none; }
+
+    /* ---- ACCROCHE ---- */
+    .cv-summary {
+      margin: 20px 0;
+      font-size: 10pt;
+      color: #333;
+      line-height: 1.65;
+      padding: 12px 16px;
+      border-left: 3px solid #0a7a55;
+      background: #f8fdf9;
+    }
+
+    /* ---- SECTIONS ---- */
+    .cv-section { margin-bottom: 22px; }
+
+    .cv-section-title {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #0a7a55;
+      border-bottom: 1px solid #d1fae5;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ---- FORMATION / EXPÉRIENCE ---- */
+    .cv-entry { margin-bottom: 14px; }
+
+    .cv-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .cv-entry-title { font-weight: 700; font-size: 10.5pt; color: #111; }
+
+    .cv-entry-date {
+      font-size: 9.5pt;
+      color: #666;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .cv-entry-org { font-size: 9.5pt; color: #555; margin-bottom: 6px; }
+
+    .cv-entry ul {
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .cv-entry ul li { font-size: 10pt; color: #333; }
+
+    /* ---- COMPÉTENCES ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    .skill-line { font-size: 10pt; color: #333; }
+    .skill-line::before { content: "· "; color: #0a7a55; font-weight: 700; }
+
+    /* ---- LANGUES ---- */
+    .lang-grid {
+      display: flex;
+      gap: 20px;
+    }
+
+    .lang-item { font-size: 10pt; color: #333; }
+    .lang-item strong { color: #111; }
+
+    /* ---- IMPRESSION ---- */
+    @media print {
+      body { padding: 32px 40px; }
+      a { color: #0a7a55 !important; }
+      .cv-summary { background: #f8fdf9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="cv-header">
+    <div class="cv-name">Adam Zouaoui</div>
+    <div class="cv-title">Développeur Web · AI Engineer Augmented</div>
+    <div class="cv-contact">
+      <span>07 67 75 21 45</span>
+      <a href="mailto:adamzpro@icloud.com">adamzpro@icloud.com</a>
+      <span>Toulouse, 31400</span>
+      <a href="https://www.linkedin.com/in/adam-zouaoui-7392a53b2/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Adamzou-lab" target="_blank">GitHub — Adamzou-lab</a>
+      <a href="https://adamzou.fr" target="_blank">adamzou.fr</a>
+    </div>
+  </header>
+
+  <!-- ACCROCHE -->
+  <div class="cv-summary">
+    Passionné par l'informatique et le développement web, je suis en formation AI Engineer Augmented
+    à Holberton School depuis 2026. J'apporte une expérience concrète en développement web freelance,
+    en animation pédagogique et en automatisation de workflows via des outils IA. Disponible pour une
+    alternance en décembre 2026 ou avril 2027, et pour des missions freelance.
+  </div>
+
+  <!-- EXPÉRIENCE -->
+  <section class="cv-section">
+    <div class="cv-section-title">Expérience Professionnelle</div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Développeur Web</span>
+        <span class="cv-entry-date">2022 – 2023</span>
+      </div>
+      <div class="cv-entry-org">Freelance</div>
+      <ul>
+        <li>Conception et maintenance de sites web responsive via CMS (WordPress, Wix, Ionos) et outils IA.</li>
+        <li>Développement de fonctionnalités front-end et adaptation mobile pour des projets clients.</li>
+        <li>Recueil des besoins clients, livraisons itératives et mise en production.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Guide en Développement Entrepreneurial</span>
+        <span class="cv-entry-date">2022 – 2023</span>
+      </div>
+      <div class="cv-entry-org">Mycreo</div>
+      <ul>
+        <li>Conception de programmes pédagogiques adaptés aux besoins des entrepreneurs.</li>
+        <li>Animation de sessions d'apprentissage interactives favorisant l'acquisition de compétences opérationnelles.</li>
+        <li>Évaluation continue et ajustement des contenus pour optimiser les parcours.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Facteur</span>
+        <span class="cv-entry-date">2023 – 2025</span>
+      </div>
+      <div class="cv-entry-org">La Poste</div>
+      <ul>
+        <li>Tournées quotidiennes en autonomie dans le respect des délais et de la qualité de service.</li>
+        <li>Gestion rigoureuse du courrier et des colis, relation client directe sur le terrain.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section class="cv-section">
+    <div class="cv-section-title">Formation</div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">AI Engineer Augmented</span>
+        <span class="cv-entry-date">2026 –</span>
+      </div>
+      <div class="cv-entry-org">Holberton School — Toulouse</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Foundations of Computer Science</span>
+        <span class="cv-entry-date">2026 –</span>
+      </div>
+      <div class="cv-entry-org">Holberton School — Toulouse</div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="cv-section">
+    <div class="cv-section-title">Compétences Techniques</div>
+    <div class="skills-grid">
+      <span class="skill-line">HTML5, CSS3</span>
+      <span class="skill-line">AI-Augmented Development</span>
+      <span class="skill-line">Bash, Linux, C, Python</span>
+      <span class="skill-line">Agentic AI · Systèmes multi-agents</span>
+      <span class="skill-line">Git & GitHub</span>
+      <span class="skill-line">Workflow Automation (n8n, Make, Zapier)</span>
+      <span class="skill-line">CMS (WordPress, Wix, Ionos)</span>
+      <span class="skill-line">Développement Web responsive</span>
+    </div>
+  </section>
+
+  <!-- LANGUES -->
+  <section class="cv-section">
+    <div class="cv-section-title">Langues</div>
+    <div class="lang-grid">
+      <span class="lang-item"><strong>Français</strong> — Natif</span>
+      <span class="lang-item"><strong>Anglais</strong> — B2</span>
+    </div>
+  </section>
+
+</body>
+</html>
