@@ -9,40 +9,42 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    @page { size: A4; margin: 18mm 16mm; }
+
     body {
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 13pt;
-      line-height: 1.55;
+      font-size: 10pt;
+      line-height: 1.6;
       color: #1a1a1a;
       background: #fff;
       max-width: 800px;
       margin: 0 auto;
-      padding: 48px 52px;
+      padding: 32px 40px;
     }
 
     /* ---- EN-TÊTE ---- */
-    .cv-header { margin-bottom: 24px; border-bottom: 2px solid #0a7a55; padding-bottom: 16px; }
+    .cv-header { margin-bottom: 14px; border-bottom: 2px solid #0a7a55; padding-bottom: 10px; }
 
     .cv-name {
-      font-size: 22pt;
+      font-size: 18pt;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #111;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .cv-title {
-      font-size: 11pt;
+      font-size: 10pt;
       font-weight: 500;
       color: #0a7a55;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .cv-contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 20px;
-      font-size: 9.5pt;
+      gap: 4px 16px;
+      font-size: 8.5pt;
       color: #444;
     }
 
@@ -50,31 +52,31 @@
 
     /* ---- ACCROCHE ---- */
     .cv-summary {
-      margin: 20px 0;
-      font-size: 10pt;
+      margin: 10px 0;
+      font-size: 9.5pt;
       color: #333;
-      line-height: 1.65;
-      padding: 12px 16px;
+      line-height: 1.55;
+      padding: 8px 12px;
       border-left: 3px solid #0a7a55;
       background: #f8fdf9;
     }
 
     /* ---- SECTIONS ---- */
-    .cv-section { margin-bottom: 22px; }
+    .cv-section { margin-bottom: 18px; }
 
     .cv-section-title {
-      font-size: 9pt;
+      font-size: 8pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #0a7a55;
       border-bottom: 1px solid #d1fae5;
-      padding-bottom: 4px;
-      margin-bottom: 12px;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
     }
 
     /* ---- FORMATION / EXPÉRIENCE ---- */
-    .cv-entry { margin-bottom: 14px; }
+    .cv-entry { margin-bottom: 12px; }
 
     .cv-entry-header {
       display: flex;
@@ -95,13 +97,13 @@
     .cv-entry-org { font-size: 9.5pt; color: #555; margin-bottom: 6px; }
 
     .cv-entry ul {
-      padding-left: 16px;
+      padding-left: 14px;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
     }
 
-    .cv-entry ul li { font-size: 10pt; color: #333; }
+    .cv-entry ul li { font-size: 9pt; color: #333; }
 
     /* ---- COMPÉTENCES ---- */
     .skills-grid {
@@ -110,7 +112,7 @@
       gap: 6px 24px;
     }
 
-    .skill-line { font-size: 10pt; color: #333; }
+    .skill-line { font-size: 9pt; color: #333; }
     .skill-line::before { content: "· "; color: #0a7a55; font-weight: 700; }
 
     /* ---- LANGUES ---- */
@@ -119,12 +121,12 @@
       gap: 20px;
     }
 
-    .lang-item { font-size: 10pt; color: #333; }
+    .lang-item { font-size: 9pt; color: #333; }
     .lang-item strong { color: #111; }
 
     /* ---- IMPRESSION ---- */
     @media print {
-      body { padding: 32px 40px; }
+      body { padding: 0; }
       a { color: #0a7a55 !important; }
       .cv-summary { background: #f8fdf9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
