@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Zou — Développeur Web Full-Stack</title>
-  <meta name="description" content="Portfolio d'Adam Zou, développeur web full-stack. Projets, compétences et contact." />
+  <title>Adam Zouaoui — Développeur FullStack & AI Engineer Augmented</title>
+  <meta name="description" content="Portfolio d'Adam Zouaoui, développeur FullStack et AI Engineer Augmented basé à Toulouse. Projets web, automatisation, systèmes multi-agents." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://adamzou.fr/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adamzou.fr/" />
-  <meta property="og:title" content="Adam Zou — Développeur Web Full-Stack" />
-  <meta property="og:description" content="Portfolio d'Adam Zou, développeur web full-stack. Projets, compétences et contact." />
+  <meta property="og:title" content="Adam Zouaoui — Développeur FullStack & AI Engineer Augmented" />
+  <meta property="og:description" content="Portfolio d'Adam Zouaoui, développeur FullStack et AI Engineer Augmented basé à Toulouse. Projets web, automatisation, systèmes multi-agents." />
   <meta property="og:image" content="https://adamzou.fr/og-image.png" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="Adam Zou" />
+  <meta property="og:site_name" content="Adam Zouaoui" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Adam Zou — Développeur Web Full-Stack" />
-  <meta name="twitter:description" content="Portfolio d'Adam Zou, développeur web full-stack. Projets, compétences et contact." />
+  <meta name="twitter:title" content="Adam Zouaoui — Développeur FullStack & AI Engineer Augmented" />
+  <meta name="twitter:description" content="Portfolio d'Adam Zouaoui, développeur FullStack et AI Engineer Augmented basé à Toulouse. Projets web, automatisation, systèmes multi-agents." />
   <meta name="twitter:image" content="https://adamzou.fr/og-image.png" />
 
   <!-- JSON-LD Schema.org Person -->
@@ -28,9 +28,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Adam Zou",
+    "name": "Adam Zouaoui",
     "url": "https://adamzou.fr",
-    "jobTitle": "Développeur Web Full-Stack",
+    "jobTitle": "Développeur FullStack & AI Engineer Augmented",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toulouse",
+      "addressCountry": "FR"
+    },
     "sameAs": [
       "https://github.com/Adamzou-lab",
       "https://www.linkedin.com/in/adam-zouaoui-7392a53b2/"
@@ -551,126 +556,6 @@
 
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; }
-    }
-
-    /* =============================================
-       SECTION TIMELINE
-    ============================================= */
-    #timeline { padding: 80px 0; }
-
-    .timeline-track {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 48px;
-      padding-top: 32px;
-    }
-
-    .timeline-track::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--glass-border);
-    }
-
-    .timeline-step {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-    }
-
-    .timeline-dot {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--glass);
-      border: 2px solid var(--glass-border);
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-      transition: all var(--transition);
-      flex-shrink: 0;
-    }
-
-    .timeline-step.done .timeline-dot {
-      background: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(10,122,85,0.15);
-    }
-
-    .timeline-step.current .timeline-dot {
-      background: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 0 0 6px rgba(10,122,85,0.2);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 4px rgba(10,122,85,0.2); }
-      50%       { box-shadow: 0 0 0 8px rgba(10,122,85,0.08); }
-    }
-
-    .timeline-content { text-align: center; padding: 0 8px; }
-
-    .timeline-date {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .timeline-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .timeline-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .timeline-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 999px;
-      margin-top: 6px;
-    }
-
-    .badge-done { background: rgba(10,122,85,0.12); color: var(--accent); }
-    .badge-current { background: rgba(251,191,36,0.15); color: #d97706; }
-    .badge-upcoming { background: var(--glass); color: var(--text-subtle); border: 1px solid var(--glass-border); }
-
-    @media (max-width: 768px) {
-      .timeline-track {
-        flex-direction: column;
-        padding-top: 0;
-        padding-left: 24px;
-        gap: 32px;
-      }
-      .timeline-track::before {
-        top: 0;
-        bottom: 0;
-        left: 9px;
-        right: auto;
-        width: 2px;
-        height: auto;
-      }
-      .timeline-step { flex-direction: row; align-items: flex-start; gap: 16px; }
-      .timeline-dot { margin-bottom: 0; flex-shrink: 0; }
-      .timeline-content { text-align: left; }
     }
 
     /* =============================================
@@ -1215,7 +1100,7 @@
 
         <!-- Boutons CTA -->
         <div class="hero-cta">
-          <a href="cv.html" target="_blank" class="btn btn-primary">
+          <a href="cv.html" target="_blank" rel="noopener" class="btn btn-primary">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
