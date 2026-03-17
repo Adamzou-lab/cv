@@ -4,13 +4,25 @@
     // -------------------------------------------
     const navToggle = document.getElementById('navToggle');
     const navLinks  = document.getElementById('navLinks');
+    const nav       = document.querySelector('nav');
 
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+      }
     });
 
 

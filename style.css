@@ -926,7 +926,7 @@
     ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
     /* =============================================
-       RESPONSIVE — TABLETTE
+       RESPONSIVE — TABLETTE (≤ 768px)
     ============================================= */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
@@ -963,20 +963,66 @@
 
       .nav-toggle { display: flex; }
 
+      /* Animation hamburger → X */
+      .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
       .contact-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
 
       section { padding: 80px 0; }
+
+      .container { padding: 0 20px; }
+
+      .skills-languages { flex-wrap: wrap; }
+
+      .contact-card, .avail-card { padding: 24px; }
     }
 
     /* =============================================
-       RESPONSIVE — MOBILE
+       RESPONSIVE — MOBILE (≤ 480px)
     ============================================= */
     @media (max-width: 480px) {
-      .hero-cta { flex-direction: column; }
-      .btn { justify-content: center; }
+      .container { padding: 0 16px; }
+
+      section { padding: 64px 0; }
+      #hero { padding-top: 64px; }
+
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .skills-tabs { flex-wrap: wrap; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
-      .blob-1, .blob-2 { opacity: 0.4; }
+      .skills-languages { flex-direction: column; }
+
+      .lang-card { width: 100%; }
+
+      .section-desc { margin-bottom: 36px; }
+
+      .blob-1, .blob-2 { opacity: 0.35; }
       .blob-3, .blob-4 { display: none; }
+    }
+
+    /* =============================================
+       RESPONSIVE — TRÈS PETIT MOBILE (≤ 360px)
+    ============================================= */
+    @media (max-width: 360px) {
+      .container { padding: 0 12px; }
+
+      .skills-grid { grid-template-columns: 1fr; }
+
+      .hero-badge { font-size: 0.72rem; padding: 6px 12px; }
+
+      .project-card { padding: 20px; }
+
+      .contact-card, .avail-card { padding: 18px; }
     }
