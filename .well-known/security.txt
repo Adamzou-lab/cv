@@ -1,0 +1,5 @@
+Contact: mailto:adamzpro@icloud.com
+Expires: 2027-03-17T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://adamzou.fr/.well-known/security.txt
+Policy: Si vous découvrez une vulnérabilité sur ce site, merci de me contacter directement par email. Je m'engage à répondre sous 72h et à traiter le rapport de manière responsable.
