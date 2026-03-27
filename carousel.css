@@ -28,26 +28,20 @@
 }
 
 .carousel-track-container {
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  overflow: hidden;
   flex: 1;
-}
-
-.carousel-track-container::-webkit-scrollbar {
-  display: none;
 }
 
 .carousel-track {
   display: flex;
   gap: 22px;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .carousel-track .project-card {
   min-width: 340px;
   flex: 0 0 340px;
-  scroll-snap-align: start;
 }
 
 .carousel-btn {
