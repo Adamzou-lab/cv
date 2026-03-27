@@ -94,4 +94,47 @@
         ticking = true;
       }
     }, { passive: true });
+
+    // -------------------------------------------
+    // CAROUSEL PROJETS
+    // -------------------------------------------
+    const track     = document.querySelector('.carousel-track');
+    const container = document.querySelector('.carousel-track-container');
+    const prevBtn   = document.querySelector('.carousel-prev');
+    const nextBtn   = document.querySelector('.carousel-next');
+    const dotsWrap  = document.querySelector('.carousel-dots');
+
+    if (track && prevBtn && nextBtn) {
+      const cards = Array.from(track.querySelectorAll('.project-card'));
+
+      // Dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => {
+          const cardW = (cards[0].offsetWidth || 340) + 22;
+          container.scrollTo({ left: i * cardW, behavior: 'smooth' });
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = () => Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+      const scrollAmount = () => (cards[0].offsetWidth || 340) + 22;
+
+      prevBtn.addEventListener('click', () => container.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+      nextBtn.addEventListener('click', () => container.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+
+      const updateState = () => {
+        const sl = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.offsetWidth;
+        prevBtn.disabled = sl <= 1;
+        nextBtn.disabled = sl >= maxScroll - 1;
+        const activeIndex = Math.round(sl / scrollAmount());
+        dots().forEach((d, j) => d.classList.toggle('active', j === activeIndex));
+      };
+
+      container.addEventListener('scroll', updateState, { passive: true });
+      updateState();
+    }
   })();

@@ -1,0 +1,115 @@
+/* ============================================
+   CIPHER HERO — carte centrée
+   ============================================ */
+.cipher-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.cipher-card {
+  max-width: 780px;
+  width: 100%;
+  border-color: rgba(10, 122, 85, 0.3);
+  background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.5));
+}
+
+.cipher-card .project-name {
+  font-size: 1.55rem;
+}
+
+/* ============================================
+   CAROUSEL PROJETS
+   ============================================ */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.carousel-track-container {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.carousel-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 22px;
+}
+
+.carousel-track .project-card {
+  min-width: 340px;
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: inherit;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scale(1.4);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cipher-card {
+    max-width: 100%;
+  }
+  .carousel-track .project-card {
+    min-width: 260px;
+    flex: 0 0 260px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
