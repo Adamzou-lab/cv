@@ -106,33 +106,33 @@
 
     if (track && prevBtn && nextBtn) {
       const cards = Array.from(track.querySelectorAll('.project-card'));
-      const CARD_W = 362; // 340px card + 22px gap — hardcodé pour éviter offsetWidth=0
-      let pos = 0;
+      const STEP   = 234;   // 220px carte + 14px gap
+      const VISIBLE = 4;
+      const MAX    = Math.max(0, cards.length - VISIBLE);
+      let idx = 0;
 
-      // Dots
-      cards.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => go(i * CARD_W));
-        dotsWrap.appendChild(dot);
-      });
+      if (dotsWrap) {
+        for (let i = 0; i <= MAX; i++) {
+          const dot = document.createElement('span');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.addEventListener('click', () => go(i));
+          dotsWrap.appendChild(dot);
+        }
+      }
 
-      const dots = () => Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+      function go(i) {
+        idx = Math.max(0, Math.min(i, MAX));
+        track.style.transform = 'translateX(-' + (idx * STEP) + 'px)';
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx >= MAX;
+        if (dotsWrap) {
+          Array.from(dotsWrap.querySelectorAll('.carousel-dot'))
+            .forEach(function(d, j) { d.classList.toggle('active', j === idx); });
+        }
+      }
 
-      const maxPos = () => Math.max(0, cards.length * CARD_W - 22 - container.offsetWidth);
-
-      const go = (newPos) => {
-        pos = Math.max(0, Math.min(newPos, maxPos()));
-        track.style.transform = `translateX(-${pos}px)`;
-        prevBtn.disabled = pos <= 0;
-        nextBtn.disabled = pos >= maxPos();
-        const activeIndex = Math.round(pos / CARD_W);
-        dots().forEach((d, j) => d.classList.toggle('active', j === activeIndex));
-      };
-
-      prevBtn.addEventListener('click', () => go(pos - CARD_W));
-      nextBtn.addEventListener('click', () => go(pos + CARD_W));
-      window.addEventListener('resize', () => go(pos), { passive: true });
+      prevBtn.addEventListener('click', function() { go(idx - 1); });
+      nextBtn.addEventListener('click', function() { go(idx + 1); });
       go(0);
     }
   })();

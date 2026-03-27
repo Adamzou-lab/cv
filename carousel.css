@@ -8,7 +8,7 @@
 }
 
 .cipher-card {
-  max-width: 780px;
+  max-width: 960px;
   width: 100%;
   border-color: rgba(10, 122, 85, 0.3);
   background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.5));
@@ -34,14 +34,13 @@
 
 .carousel-track {
   display: flex;
-  gap: 22px;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
+  gap: 14px;
+  transition: transform 0.4s ease;
 }
 
 .carousel-track .project-card {
-  min-width: 340px;
-  flex: 0 0 340px;
+  min-width: 220px;
+  flex: 0 0 220px;
 }
 
 .carousel-btn {
